@@ -175,6 +175,54 @@
     @media (max-width:880px){
       .wrap{ grid-template-columns: 1fr; max-width:680px }
     }
+	/* FIX MOBILE RESPONSIVENESS */
+@media(max-width: 850px){
+
+  .wrap {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
+
+  .card-left, .card-right {
+    width: 100%;
+  }
+
+  .avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+}
+
+/* EXTRA SAFE FIX FOR VERY SMALL PHONES (like 320px width) */
+@media(max-width: 420px){
+
+  .avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .wrap {
+    gap: 15px;
+  }
+
+  .card-left, .card-right {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 18px;
+  }
+
+}
+
   </style>
 </head>
 <body>
