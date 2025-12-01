@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mahesh Sadam - Resume</title>
+
+  <!-- Simple, modern fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg1: #f6f7fb;
+      --bg2: #e9eef8;
+      --card: #ffffff;
+      --muted: #6b7280;
+      --accent: linear-gradient(135deg,#6f8efb 0%, #7be3c7 100%);
+      --glass: rgba(255,255,255,0.6);
+      --shadow: 0 10px 30px rgba(16,24,40,0.08);
+      --radius: 14px;
+    }
+
+    *{box-sizing: border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: radial-gradient(1200px 400px at 10% 10%, #f3f7ff 0%, transparent 10%),
+                  radial-gradient(1000px 300px at 90% 90%, #eefaf3 0%, transparent 12%),
+                  linear-gradient(180deg,var(--bg1),var(--bg2));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:28px;
+      color:#0f172a;
+    }
+
+    .wrap{
+      width:100%;
+      max-width:980px;
+      display:grid;
+      grid-template-columns: 380px 1fr;
+      gap:28px;
+      align-items:start;
+    }
+
+    /* Left card */
+    .card-left{
+      background: var(--card);
+      border-radius: var(--radius);
+      padding:26px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(15,23,42,0.04);
+    }
+
+    .avatar{
+      width:124px;
+      height:124px;
+      border-radius:50%;
+      display:block;
+      margin:0 auto;
+      object-fit:cover;
+      border:6px solid white;
+      box-shadow: 0 6px 22px rgba(15,23,42,0.06);
+      background: linear-gradient(180deg,#e6eefc,#fff);
+    }
+
+    h1{
+      font-size:22px;
+      text-align:center;
+      margin:14px 0 4px;
+    }
+    p.role{ text-align:center; color:var(--muted); margin:0 0 12px; font-weight:600 }
+
+    .contact{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      margin-top:12px;
+    }
+    .contact-item{ display:flex; gap:10px; align-items:center; color:#111827 }
+    .contact-item small{ color:var(--muted); font-size:13px }
+
+    .section-title{
+      margin-top:18px;
+      font-size:13px;
+      color:var(--muted);
+      letter-spacing:0.6px;
+      font-weight:700;
+    }
+
+    .edu, .about {
+      font-size:14px;
+      color:#0f172a;
+      margin-top:8px;
+      line-height:1.45;
+    }
+
+    /* Right column */
+    .card-right{
+      background: linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.85));
+      border-radius: var(--radius);
+      padding:22px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(15,23,42,0.03);
+    }
+
+    .skills-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px,1fr));
+      gap:12px;
+      margin-top:10px;
+    }
+
+    .skill{
+      background: linear-gradient(180deg,#ffffff,#fbfdff);
+      border-radius:12px;
+      padding:10px;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      border:1px solid rgba(15,23,42,0.04);
+    }
+
+    .skill img{
+      width:40px;
+      height:40px;
+      object-fit:contain;
+      display:block;
+    }
+
+    .skill .meta{
+      display:flex;
+      flex-direction:column;
+      font-size:14px;
+    }
+    .skill .meta b{ font-size:14px; color:#0f172a }
+    .skill .meta span{ font-size:12px; color:var(--muted) }
+
+    .tools-row{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+
+    .tool{
+      background:rgba(15,23,42,0.03);
+      padding:8px 10px;
+      border-radius:10px;
+      display:flex;
+      gap:8px;
+      align-items:center;
+      border:1px solid rgba(15,23,42,0.02);
+    }
+    .tool img{ width:20px; height:20px; }
+
+    .projects{
+      margin-top:18px;
+      display:flex;
+      gap:12px;
+      flex-direction:column;
+    }
+
+    .project{
+      background: linear-gradient(180deg,#fff,#fbfdff);
+      border-radius:10px;
+      padding:12px;
+      border:1px solid rgba(15,23,42,0.04);
+    }
+    .project b{ display:block; margin-bottom:6px; }
+    .project p{ margin:0; color:var(--muted); font-size:13px }
+
+    /* responsive */
+    @media (max-width:880px){
+      .wrap{ grid-template-columns: 1fr; max-width:680px }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="wrap" role="main">
+
+    <!-- LEFT: Personal Card -->
+    <section class="card-left" aria-labelledby="name">
+     
+
+      <h1 id="name">Mahesh Sadam</h1>
+      <p class="role">Frontend Developer</p>
+
+      <div class="contact" aria-label="contact information">
+        <div class="contact-item"><svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M21 8v8a2 2 0 0 1-2 2h-2" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><small>Hyderabad, Telangana</small></div>
+        <div class="contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="#0f172a" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg><small>7396942808</small></div>
+        <div class="contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 8l9 6 9-6" stroke="#0f172a" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg><small>sadammahesh26@gmail.com</small></div>
+      </div>
+
+      <div class="section-title">Education</div>
+      <div class="edu">
+        <strong>Osmania University</strong><br>
+        BE — Electronics &amp; Communication (ECE)
+      </div>
+
+      <div class="section-title">About</div>
+      <div class="about">
+        Frontend developer with strong skills in JavaScript frameworks, state
+        management (NgRx), and familiar with version control & IDE workflows.
+        Focused on clean UI, responsive layouts and maintainable code.
+      </div>
+    </section>
+
+    <!-- RIGHT: Skills / Tools / Projects -->
+    <section class="card-right" aria-labelledby="skills-heading">
+      <h2 id="skills-heading" style="margin:0; font-size:18px">Skills & Tools</h2>
+      <p style="margin:6px 0 0; color:var(--muted); font-size:13px">Technologies, state mgmt, libraries and tooling I use</p>
+
+      <!-- Skills grid -->
+      <div class="skills-grid" role="list" aria-label="skills list">
+
+        <!-- HTML -->
+        <div class="skill" role="listitem">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5 logo">
+          <div class="meta"><b>HTML5</b><span>Semantic markup</span></div>
+        </div>
+
+        <!-- CSS -->
+        <div class="skill" role="listitem">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3 logo">
+          <div class="meta"><b>CSS3</b><span>Flexbox, Grid, Responsive</span></div>
+        </div>
+
+        <!-- JavaScript -->
+        <div class="skill" role="listitem">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript logo">
+          <div class="meta"><b>JavaScript</b><span>ES6+, DOM, Fetch</span></div>
+        </div>
+
+        <!-- React -->
+        <div class="skill" role="listitem">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React logo">
+          <div class="meta"><b>React</b><span>Hooks, Context</span></div>
+        </div>
+
+        <!-- Angular -->
+        <div class="skill" role="listitem">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular logo">
+          <div class="meta"><b>Angular</b><span>TypeScript, components</span></div>
+        </div>
+
+        <!-- NgRx -->
+        <div class="skill" role="listitem" title="NgRx (state management)">
+          <!-- simple custom svg for NgRx since CDN icons are inconsistent -->
+          <img alt="NgRx logo" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect rx='8' width='64' height='64' fill='%236f8efb'/><text x='50%' y='55%' font-size='18' font-family='Arial' fill='white' text-anchor='middle' font-weight='700'>NgRx</text></svg>">
+          <div class="meta"><b>NgRx</b><span>Redux-style state</span></div>
+        </div>
+
+        <!-- JSON -->
+        <div class="skill" role="listitem">
+          <img alt="JSON file icon" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' rx='8' fill='%23F1F5F9'/><text x='32' y='38' font-size='16' text-anchor='middle' fill='%23111'>JSON</text></svg>">
+          <div class="meta"><b>JSON</b><span>APIs & data interchange</span></div>
+        </div>
+
+        <!-- jQuery -->
+        <div class="skill" role="listitem">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-plain.svg" alt="jQuery logo">
+          <div class="meta"><b>jQuery</b><span>DOM utilities, legacy support</span></div>
+        </div>
+
+        <!-- Bootstrap -->
+        <div class="skill" role="listitem">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap logo">
+          <div class="meta"><b>Bootstrap</b><span>Fast UI prototypes</span></div>
+        </div>
+
+      </div>
+
+      <!-- Tools & Version Control -->
+      <div style="margin-top:16px">
+        <div class="section-title">Version Control & IDE</div>
+        <div class="tools-row" role="list" aria-label="tools">
+          <div class="tool" role="listitem"><img alt="Git logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"><div style="font-size:13px">Git</div></div>
+          <div class="tool" role="listitem"><img alt="GitHub logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"><div style="font-size:13px">GitHub</div></div>
+          <div class="tool" role="listitem"><img alt="Bitbucket logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bitbucket/bitbucket-original.svg"><div style="font-size:13px">Bitbucket</div></div>
+          <div class="tool" role="listitem"><img alt="VS Code logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"><div style="font-size:13px">VS Code</div></div>
+        </div>
+        <div style="margin-top:8px; font-size:13px; color:var(--muted)">I use Git for branching, GitHub / Bitbucket for remote repositories and CI pipelines; VS Code as primary IDE.</div>
+      </div>
+
+      <!-- Projects (example placeholders - replace with yours) -->
+      <div class="section-title">Selected Work</div>
+      <div class="projects">
+        <div class="project">
+          <b>Portfolio Site</b>
+          <p>Responsive React + CSS Grid portfolio with contact form and deploy pipeline (GitHub Actions).</p>
+        </div>
+
+        <div class="project">
+          <b>Admin Dashboard</b>
+          <p>Angular + NgRx dashboard for device monitoring, real-time updates and role-based views.</p>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- small script: optional enhancement - allows adding more skill items easily -->
+  <script>
+    // Example: you can extend skills dynamically later.
+    // Not needed now - template is static and ready to use.
+  </script>
+
+</body>
+</html>
